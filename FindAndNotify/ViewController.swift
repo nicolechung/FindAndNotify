@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UISearchController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var latitude: UILabel!
     
@@ -93,6 +93,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         streetType = pickerData[row];
     }
 
+    // table views
+    
 
 }
 

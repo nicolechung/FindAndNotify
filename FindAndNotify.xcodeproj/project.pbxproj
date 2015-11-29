@@ -14,6 +14,8 @@
 		AE7574BD1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE7574BB1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld */; };
 		AE7574BF1C0A2A5F008BA5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7574BE1C0A2A5F008BA5C9 /* Assets.xcassets */; };
 		AE7574C21C0A2A5F008BA5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7574C01C0A2A5F008BA5C9 /* LaunchScreen.storyboard */; };
+		AE7C4BFE1C0B789700531749 /* SearchRoutesControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4BFD1C0B789700531749 /* SearchRoutesControllerTableViewController.swift */; };
+		AE7C4C001C0B799F00531749 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4BFF1C0B799F00531749 /* Route.swift */; };
 		AEBA5BEA1C0A5BF900CC38D2 /* NextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBA5BE91C0A5BF900CC38D2 /* NextBusService.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		AE7574BE1C0A2A5F008BA5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE7574C11C0A2A5F008BA5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE7574C31C0A2A5F008BA5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE7C4BFD1C0B789700531749 /* SearchRoutesControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRoutesControllerTableViewController.swift; sourceTree = "<group>"; };
+		AE7C4BFF1C0B799F00531749 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		AEBA5BE91C0A5BF900CC38D2 /* NextBusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBusService.swift; sourceTree = "<group>"; };
 		B6BE291893BE9774C904C481 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D73AFB222FFB7B23F1B24C4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				AE7574C01C0A2A5F008BA5C9 /* LaunchScreen.storyboard */,
 				AE7574C31C0A2A5F008BA5C9 /* Info.plist */,
 				AE7574BB1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld */,
+				AE7C4BFD1C0B789700531749 /* SearchRoutesControllerTableViewController.swift */,
+				AE7C4BFF1C0B799F00531749 /* Route.swift */,
 			);
 			path = FindAndNotify;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 			files = (
 				AE7574B71C0A2A5E008BA5C9 /* ViewController.swift in Sources */,
 				AEBA5BEA1C0A5BF900CC38D2 /* NextBusService.swift in Sources */,
+				AE7C4BFE1C0B789700531749 /* SearchRoutesControllerTableViewController.swift in Sources */,
+				AE7C4C001C0B799F00531749 /* Route.swift in Sources */,
 				AE7574B51C0A2A5E008BA5C9 /* AppDelegate.swift in Sources */,
 				AE7574BD1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld in Sources */,
 			);
