@@ -23,7 +23,7 @@ class ViewController: UISearchController, UIPickerViewDataSource, UIPickerViewDe
     
     let pickerData = ["Avenue", "Boulevard", "Circle", "Court", "Lane", "Plaza", "Quay, ","Road", "Street", "Terrace", "Walk"];
     
-    var routes:[[String:String]]?
+    var routes:[Route]?
     var streetType:String?
     
     

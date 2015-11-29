@@ -8,7 +8,7 @@ internal class NextBusService {
     
     private let BaseUrl="http://webservices.nextbus.com/service/publicXMLFeed";
     
-    internal func getRoutes(completion:(routeList:[[String:String]])->Void) {
+    internal func getRoutes(completion:(routeList:[Route])->Void) {
         
         Alamofire.request(.GET, BaseUrl, parameters: ["command": "routeList", "a": "ttc"])
             .response(completionHandler: {
@@ -18,15 +18,17 @@ internal class NextBusService {
                 } else {
                     print(data!);
                     let xml = SWXMLHash.parse(data!);
-                    var routeInfo = Dictionary<String, String>()
                     
                     // this is supposed to be an array
-                    var routeList = [[String:String]]()
-                    //print(xml["body"]);
+                    var routeList = [Route]()
+                    
                     for elem in xml["body"]["route"] {
-                        routeInfo["title"] = elem.element!.attributes["title"]
-                        routeInfo["tag"] = elem.element!.attributes["tag"]
-                        routeList.append(routeInfo)
+                        let route = Route(
+                            title:elem.element!.attributes["title"]!,
+                            tag:elem.element!.attributes["tag"]!
+                        )
+                        
+                        routeList.append(route)
                     }
                     completion(routeList: routeList)
                 }

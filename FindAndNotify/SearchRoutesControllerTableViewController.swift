@@ -1,4 +1,4 @@
-//
+    //
 //  SearchRoutesControllerTableViewController.swift
 //  FindAndNotify
 //
@@ -8,16 +8,30 @@
 
 import UIKit
 
-class SearchRoutesControllerTableViewController: UITableViewController {
+class SearchRoutesControllerTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    var routes = [Route]()
+    var filteredRoutes = [Route]()
+    var resultSearchController = UISearchController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        
+        NextBusService.sharedInstance.getRoutes({(routeList)->Void in
+            self.routes = routeList;
+            print("----routes----")
+            print(routeList);
+        })
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +43,48 @@ class SearchRoutesControllerTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if self.resultSearchController.active {
+            return self.filteredRoutes.count
+        } else {
+            return self.routes.count;
+        }
+        
     }
 
-    /*
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell?
 
         // Configure the cell...
+        if self.resultSearchController.active {
+            cell!.textLabel?.text = self.filteredRoutes[indexPath.row].title
+        } else {
+            cell!.textLabel?.text = self.routes[indexPath.row].title
+        }
+        
+        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
-        return cell
+        return cell!
     }
-    */
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.filteredRoutes.removeAll(keepCapacity: false)
+        
+        filterContentForSearchText(searchController.searchBar.text!)
+        
+        self.tableView.reloadData()
+    }
+    
+    func filterContentForSearchText(searchText:String) {
+        self.filteredRoutes = self.routes.filter({(route:Route) -> Bool in
+            let stringMatch = route.title.rangeOfString(searchText);
+            return stringMatch != nil;
+        })
+    }
 
     /*
     // Override to support conditional editing of the table view.
