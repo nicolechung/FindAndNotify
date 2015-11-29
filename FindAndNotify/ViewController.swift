@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     let pickerData = ["Avenue", "Boulevard", "Circle", "Court", "Lane", "Plaza", "Quay, ","Road", "Street", "Terrace", "Walk"];
     
-    var routeList:Array<String> = []
+    var routes:[[String:String]]?
     var streetType:String?
     
     
@@ -60,7 +60,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         streetPicker.dataSource = self;
         streetPicker.delegate = self;
         
-        NextBusService.sharedInstance.getRoutes()
+        NextBusService.sharedInstance.getRoutes({(routeList)->Void in
+         
+            self.routes = routeList;
+            print("----routes----")
+            print(routeList);
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
