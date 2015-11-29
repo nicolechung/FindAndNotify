@@ -14,7 +14,7 @@
 		AE7574BD1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE7574BB1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld */; };
 		AE7574BF1C0A2A5F008BA5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7574BE1C0A2A5F008BA5C9 /* Assets.xcassets */; };
 		AE7574C21C0A2A5F008BA5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7574C01C0A2A5F008BA5C9 /* LaunchScreen.storyboard */; };
-		AEBA5BE81C0A4BBD00CC38D2 /* TTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBA5BE71C0A4BBD00CC38D2 /* TTCService.swift */; };
+		AEBA5BEA1C0A5BF900CC38D2 /* NextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBA5BE91C0A5BF900CC38D2 /* NextBusService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		AE7574BE1C0A2A5F008BA5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE7574C11C0A2A5F008BA5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE7574C31C0A2A5F008BA5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEBA5BE71C0A4BBD00CC38D2 /* TTCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCService.swift; sourceTree = "<group>"; };
+		AEBA5BE91C0A5BF900CC38D2 /* NextBusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBusService.swift; sourceTree = "<group>"; };
 		B6BE291893BE9774C904C481 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D73AFB222FFB7B23F1B24C4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,7 +47,7 @@
 		AE125D271C0A2B7F0029F4ED /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AEBA5BE71C0A4BBD00CC38D2 /* TTCService.swift */,
+				AEBA5BE91C0A5BF900CC38D2 /* NextBusService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE7574B71C0A2A5E008BA5C9 /* ViewController.swift in Sources */,
+				AEBA5BEA1C0A5BF900CC38D2 /* NextBusService.swift in Sources */,
 				AE7574B51C0A2A5E008BA5C9 /* AppDelegate.swift in Sources */,
 				AE7574BD1C0A2A5F008BA5C9 /* FindAndNotify.xcdatamodeld in Sources */,
-				AEBA5BE81C0A4BBD00CC38D2 /* TTCService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

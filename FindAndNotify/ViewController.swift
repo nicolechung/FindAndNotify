@@ -21,8 +21,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var streetPicker: UIPickerView!
     
-    let pickerData = ["Avenue", "Boulevard", "Circle", "Court", "Lane", "Plaza", "Quay, ","Road", "Street", "Terrace", "Walk"]
+    let pickerData = ["Avenue", "Boulevard", "Circle", "Court", "Lane", "Plaza", "Quay, ","Road", "Street", "Terrace", "Walk"];
     
+    var routeList:Array<String> = []
     var streetType:String?
     
     
@@ -58,6 +59,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Do any additional setup after loading the view, typically from a nib.
         streetPicker.dataSource = self;
         streetPicker.delegate = self;
+        
+        NextBusService.sharedInstance.getRoutes()
     }
 
     override func didReceiveMemoryWarning() {
